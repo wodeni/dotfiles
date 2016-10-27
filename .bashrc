@@ -65,4 +65,15 @@ alias gccg='gcc -g -Wall'
 alias g++g='g++ -g -Wall'
 alias valgrindlc='valgrind --leak-check=yes'
 
+alias semdir='cd $SEMDIR'
+alias graphicdir='cd $GRAPHICDIR'
+# PATH variable
+export PATH=$PATH":$HOME/bin"
+export SEMDIR="/Users/niw/Dropbox/Columbia/2016-Fall/"
+export GRAPHICDIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/hw/raytra"
 
+
+# Powerline
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+        source /usr/share/powerline/bindings/bash/powerline.sh
+    fi
