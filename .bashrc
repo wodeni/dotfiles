@@ -10,9 +10,17 @@ HISTCONTROL=ignoredups:ignorespace
 # basic prompt
 PS1='\u@\h \w \$ '
 
+sad=":("
+happy=":)"
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+reset=$(tput sgr0)
 # color prompt 
 # - see https://wiki.archlinux.org/index.php/Color_Bash_Prompt
-PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \" || echo \"\[\033[01;32m\]:)\[\033[01;34m\] \" )\\$\[\033[00m\] "
+# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \" || echo \"\[\033[01;32m\]:)\[\033[01;34m\] \" )\\$\[\033[00m\] "
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[$green\]\h'; else echo '\[$green\]\u@\h'; fi)\[$blue\] \w \$([[ \$? != 0 ]] && echo \"\[$red\]:(\[$blue\] \" || echo \"\[$green\]:)\[$blue\] \" )\\$\[$reset\] "
+
 
 # show "[hh:mm] user@host:pwd" in xterm title bar
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
@@ -67,10 +75,13 @@ alias valgrindlc='valgrind --leak-check=yes'
 
 alias semdir='cd $SEMDIR'
 alias graphicdir='cd $GRAPHICDIR'
+alias raytradir='cd $RAYTRADIR'
+alias notedir='cd ~/Documents/notes/'
 # PATH variable
 export PATH=$PATH":$HOME/bin"
 export SEMDIR="/Users/niw/Dropbox/Columbia/2016-Fall/"
-export GRAPHICDIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/hw/raytra"
+export GRAPHICDIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/"
+export RAYTRADIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/hw/raytra"
 
 
 # Powerline
