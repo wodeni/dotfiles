@@ -220,3 +220,4 @@ set laststatus=2
 " Disable spell check because of the bad highlighting scheme
 highlight clear SpellBad
 highlight clear SpellLocal
+

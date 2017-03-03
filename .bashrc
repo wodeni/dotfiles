@@ -73,13 +73,18 @@ alias gccg='gcc -g -Wall'
 alias g++g='g++ -g -Wall'
 alias valgrindlc='valgrind --leak-check=yes'
 
-alias semdir='cd $SEMDIR'
 alias graphicdir='cd $GRAPHICDIR'
 alias raytradir='cd $RAYTRADIR'
 alias notedir='cd ~/Documents/notes/'
+alias dropboxdir='cd /Users/niw/Dropbox/'
+
+alias semdir='cd $SEMDIR'
+alias osdir="cd /Users/niw/Dropbox/Columbia/2017-Spring/coms-4118"
+alias pltdir="cd /Users/niw/Dropbox/Columbia/2017-Spring/coms-4115"
+
 # PATH variable
 export PATH=$PATH":$HOME/bin"
-export SEMDIR="/Users/niw/Dropbox/Columbia/2016-Fall/"
+export SEMDIR="/Users/niw/Dropbox/Columbia/2017-Spring/"
 export GRAPHICDIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/"
 export RAYTRADIR="/Users/niw/Dropbox/Columbia/2016-Fall/4160/hw/raytra"
 
