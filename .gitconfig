@@ -1,0 +1,14 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = wodeni
+	email = wn2155@columbia.edu
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	pub = "!git add -u; git ci -m \"auto commit\"; git push;"
