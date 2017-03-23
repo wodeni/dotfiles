@@ -7,6 +7,11 @@
 # and don't put lines starting with space.
 HISTCONTROL=ignoredups:ignorespace
 
+# Git status
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # basic prompt
 PS1='\u@\h \w \$ '
 
@@ -14,12 +19,13 @@ sad=":("
 happy=":)"
 red=$(tput setaf 1)
 green=$(tput setaf 2)
+yellow=$(tput setaf 3)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 # color prompt 
 # - see https://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \" || echo \"\[\033[01;32m\]:)\[\033[01;34m\] \" )\\$\[\033[00m\] "
-PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[$green\]\h'; else echo '\[$green\]\u@\h'; fi)\[$blue\] \w \$([[ \$? != 0 ]] && echo \"\[$red\]:(\[$blue\] \" || echo \"\[$green\]:)\[$blue\] \" )\\$\[$reset\] "
+PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[$green\]\h'; else echo '\[$green\]\u@\h'; fi)\[$blue\] \w\[$yellow\]\$(parse_git_branch) \$([[ \$? != 0 ]] && echo \"\[$red\]:(\[$blue\] \" || echo \"\[$green\]:)\[$blue\] \" )\\$\[$reset\] "
 
 
 # show "[hh:mm] user@host:pwd" in xterm title bar
@@ -80,7 +86,7 @@ alias dropboxdir='cd /Users/niw/Dropbox/'
 
 alias semdir='cd $SEMDIR'
 alias osdir="cd /Users/niw/Dropbox/Columbia/2017-Spring/coms-4118"
-alias pltdir="cd /Users/niw/Dropbox/Columbia/2017-Spring/coms-4115"
+alias pltdir="cd ~/PLTProject"
 
 # PATH variable
 export PATH=$PATH":$HOME/bin"
