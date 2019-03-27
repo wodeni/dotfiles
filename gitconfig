@@ -18,3 +18,5 @@
     last = log -1 HEAD
     autopub = "!git add -u; git ci -m \"auto commit\"; git push;"
     pub = "!git add -u; git ci; git push;"
+[credential]
+	helper = osxkeychain
