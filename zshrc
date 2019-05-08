@@ -1,21 +1,10 @@
 ################################################################################
-# Nimo's settings
-################################################################################
-
-# vi mode (of course)
-bindkey -v
-# autojump for faster navigation
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-alias c=clear
-
-################################################################################
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/wodeni/.oh-my-zsh"
+export ZSH="/Users/niw/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +64,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,3 +96,33 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+################################################################################
+# Nimo's settings
+################################################################################
+
+# Reverse search
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+
+# Autojump for faster navigation
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# Aliases
+alias c=clear
+alias code="code ."
+alias op="open ."
+alias g=git
+alias config="vim ~/.zshrc"
+
+# vi mode (of course)
+bindkey -v
+
+# select autosuggestion color according to https://jonasjacek.github.io/colors/
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=199"
+
+# PATH variables
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
