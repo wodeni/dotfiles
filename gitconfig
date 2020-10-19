@@ -15,6 +15,7 @@
     wdiff = diff --color-words
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
     ci = commit
+    co = checkout
     st = status
     unstage = reset HEAD --
     last = log -1 HEAD
@@ -22,3 +23,10 @@
     pub = "!git add -u; git ci; git push;"
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[merge]
+	tool = code

@@ -4,7 +4,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/niw/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,6 +116,8 @@ alias code="code ."
 alias op="open ."
 alias g=git
 alias config="vim ~/.zshrc"
+alias runpenrose="penrose"
+alias pip=pip3
 
 # vi mode (of course)
 bindkey -v
@@ -126,3 +128,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=199"
 # PATH variables
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Ruby-related things
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
